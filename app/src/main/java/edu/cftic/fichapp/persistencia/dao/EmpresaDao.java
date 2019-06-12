@@ -126,6 +126,7 @@ public class EmpresaDao extends CRUD implements IEmpresaEsquema, IEmpresaDao {
         int nombreIndex;
         int responsableIndex;
         int emailIndex;
+        int rutalogoIndex;
 
         if(cursor.getColumnIndex(C_COL_ID_EMPRESA) != -1){
             id_empresaIndex = cursor.getColumnIndexOrThrow(C_COL_ID_EMPRESA);
@@ -147,6 +148,10 @@ public class EmpresaDao extends CRUD implements IEmpresaEsquema, IEmpresaDao {
             emailIndex = cursor.getColumnIndexOrThrow(C_COL_EMAIL);
             e.setEmail( cursor.getString(emailIndex));
         }
+        if(cursor.getColumnIndex(C_COL_RUTA_LOGO) != -1){
+            rutalogoIndex = cursor.getColumnIndexOrThrow(C_COL_RUTA_LOGO);
+            e.setRutalogo( cursor.getString(rutalogoIndex));
+        }
         return e;
     }
 
@@ -157,6 +162,7 @@ public class EmpresaDao extends CRUD implements IEmpresaEsquema, IEmpresaDao {
         valoresIniciales.put(C_COL_NOMBRE, e.getNombre_empresa());
         valoresIniciales.put(C_COL_RESPONSABLE, e.getResponsable());
         valoresIniciales.put(C_COL_EMAIL, e.getEmail());
+        valoresIniciales.put(C_COL_RUTA_LOGO, e.getRutalogo());
     }
 
     private ContentValues getRegistro(){

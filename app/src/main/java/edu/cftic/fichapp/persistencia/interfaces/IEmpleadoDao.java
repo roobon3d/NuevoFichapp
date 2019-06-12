@@ -16,4 +16,5 @@ public interface IEmpleadoDao {
     public boolean eliminar(int id_empleado);
     public boolean actualizar(Empleado e);
     public boolean baja(Empleado e);
+    public Empleado getGestor ();
 }

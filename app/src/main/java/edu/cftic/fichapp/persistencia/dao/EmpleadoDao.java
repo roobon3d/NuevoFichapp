@@ -189,7 +189,13 @@ public class EmpleadoDao extends CRUD implements IEmpleadoEsquema, IEmpleadoDao 
     }
 
     @Override
+    public Empleado getGestor() {
+        return null;
+    }
+
+    @Override
     protected Empleado cursorATabla(Cursor cursor) {
+
         Empleado e = new Empleado();
         int id_empleadoIndex;
         int nombreIndex;

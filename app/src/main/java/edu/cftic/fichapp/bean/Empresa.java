@@ -1,28 +1,34 @@
 package edu.cftic.fichapp.bean;
 
-public class Empresa {
+import java.io.Serializable;
+
+public class Empresa implements Serializable {
     private int id_empresa;
     private String cif;
     private String nombre_empresa;
     private String responsable;
     private String email;
+    private String rutalogo;
 
     public Empresa() {
     }
 
-    public Empresa(String cif, String nombre_empresa, String responsable, String email) {
+    public Empresa(String cif, String nombre_empresa, String responsable, String email, String rutalogo) {
         this.cif = cif;
         this.nombre_empresa = nombre_empresa;
         this.responsable = responsable;
         this.email = email;
+        this.rutalogo = rutalogo;
     }
 
-    public Empresa(int id_empresa, String cif, String nombre_empresa, String responsable, String email) {
+    public Empresa(int id_empresa, String cif, String nombre_empresa, String responsable, String email, String rutalogo) {
         this.id_empresa = id_empresa;
         this.cif = cif;
         this.nombre_empresa = nombre_empresa;
         this.responsable = responsable;
         this.email = email;
+        this.rutalogo = rutalogo;
+
     }
 
     public int getId_empresa() {
@@ -65,6 +71,14 @@ public class Empresa {
         this.email = email;
     }
 
+    public String getRutalogo() {
+        return rutalogo;
+    }
+
+    public void setRutalogo(String rutalogo) {
+        this.rutalogo = rutalogo;
+    }
+
     @Override
     public String toString() {
         return "Empresa{" +
@@ -73,6 +87,7 @@ public class Empresa {
                 ", nombre_empresa='" + nombre_empresa + '\'' +
                 ", responsable='" + responsable + '\'' +
                 ", email='" + email + '\'' +
+                ", rutalogo='" + rutalogo + '\'' +
                 '}';
     }
 }

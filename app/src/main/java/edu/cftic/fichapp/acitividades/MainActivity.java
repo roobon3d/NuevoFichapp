@@ -3,61 +3,79 @@ package edu.cftic.fichapp.acitividades;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import android.widget.CheckBox;
 
 import edu.cftic.fichapp.R;
 import edu.cftic.fichapp.bean.Empleado;
 import edu.cftic.fichapp.bean.Empresa;
-import edu.cftic.fichapp.bean.Fichaje;
 import edu.cftic.fichapp.persistencia.DB;
 import edu.cftic.fichapp.util.Constantes;
+import edu.cftic.fichapp.util.Preferencias;
 
 public class MainActivity extends AppCompatActivity {
 
-//TODO HACER LAS VISTAS DE LOS MENUS PARA IMPLEMENTAR CON LA DB
+    //TODO HACER LAS VISTAS DE LOS MENUS PARA IMPLEMENTAR CON LA DB
+    private CheckBox checkBox;
+
+    private Empleado hayGestor() {
+        Empleado empleado = null;
+
+        empleado = DB.empleados.getGestor();
+
+
+        return empleado;
+    }
+
+    private boolean hayEmpresa() {
+        boolean b = false;
+
+        Empresa empresa = DB.empresas.primero();
+        if (empresa != null) {
+            b = true;
+        }
+
+        return b;
+    }
+
+    private void lanzarActividad(Class actividad_destino) {
+        Intent i = new Intent(this, actividad_destino);
+        startActivity(i);
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (Preferencias.primeraVez(this)) {
+            lanzarActividad(AvisosLegalesActivity.class);
+            Preferencias.setPrimeraVez(this, false);
+        } else //no es la primera, vemos ayuda
+            {
+            checkBox = null;//TODO sustituir xfindViewById(R.id.) de Gabriela
+            if (Preferencias.isCheck(this, checkBox)) {
+                lanzarActividad(AyudaActivity.class);
+            } else { //ayuda desactivada
+                 ;
+                if (null == hayGestor()) {
+                    lanzarActividad(RegistroEmpleadoActivity.class);
+                } else { //hay gestor
+                    if (!hayEmpresa())
+                    {//no hay empresa
+                        lanzarActividad(RegistroEmpresaActivity.class);
+                    } else //hay gestor y empresa
+                        {
+                            lanzarActividad(LoginActivity.class);
+                        }
+                }
+            }
+
+        }
 
         // Comprobar si hay un empleado que sea el Responsable
         //Empleado empleadoControlador = new Empleado(this);
-        List<String> roles = (ArrayList)DB.empleados.getRoles();
-
-        Intent intent = null;
-        if( roles == null || !roles.contains(Constantes.ROL_GESTOR)) {
-            // No hay empleados registrados o ninguno de los
-            //    empleados registrados es un gestor.
-            // Llamar a la Actividad de dar de alta Empleados,
-            //        forzando que sea un gestor o responsable.
-//            intent = new Intent(this, RegistroGestorActivity.class);
-
-
-        } else {
-            // Ya hay empleados y hay, al menos, un GESTOR.
-
-            // Comprobar si hay dada de alta al menos una Empresa
-            //Empresa empresaControlador = new EmpresaControlador(this);
-            Empresa empresa = DB.empresas.primero();
-            if( null == empresa) {
-                // No hay empresas en la Base de datos, hay que dar de alta.
-                // TODO Llamar a la Actividad de dar de alta Empresas.
-//                intent = new Intent(this, RegistroEmpresaActivity.class);
-            } else {
-                // TODO Saltar al Login.
-                intent = new Intent( this, LoginActivity.class);
-            }
-        }
-        if( null != intent) {
-            startActivity( intent);
-        }
 
 
         //ejemplo de uso de la base de datos

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FichApp</string>
+    <string name="error_login">"Incorrect user and/or passwrod, contact the administrator "</string>
+</resources>

@@ -16,7 +16,24 @@ public class Preferencias {
 
     public static boolean primeraVez (Context context)
     {
-        return false;
+        boolean b = false;
+        SharedPreferences fichero = null;
+
+        fichero = context.getSharedPreferences(NOMBRE_FICHERO, Context.MODE_PRIVATE);
+        b = fichero.getBoolean(PRIMERA_VEZ, true);
+
+        return b;
+    }
+
+    public static void setPrimeraVez (Context context, boolean valor)
+    {
+        SharedPreferences fichero = null;
+
+        fichero = context.getSharedPreferences(NOMBRE_FICHERO, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = fichero.edit();
+
+        editor.putBoolean(PRIMERA_VEZ,valor);
+
     }
 
 
@@ -34,6 +51,20 @@ public class Preferencias {
 
         editor.putBoolean(x,true);
 
+    }
+
+    public static boolean isCheck (Context context, CheckBox checkBox){
+
+        boolean b = false;
+        SharedPreferences fichero = null;
+
+        fichero = context.getSharedPreferences(NOMBRE_FICHERO, Context.MODE_PRIVATE);
+
+        String x = String.valueOf(checkBox.getId());
+
+        b = fichero.getBoolean(x, false);
+
+        return b;
     }
 
     public static void guardar_booleano(Context context, boolean b) {

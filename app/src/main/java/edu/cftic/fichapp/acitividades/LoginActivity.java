@@ -14,9 +14,9 @@ import edu.cftic.fichapp.util.Constantes;
 
 public class LoginActivity extends AppCompatActivity  {
 
-    EditText usuario = null;
-    EditText contraseña = null;
-    private DB database = null;
+    EditText usuario;
+    EditText contraseña;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +26,18 @@ public class LoginActivity extends AppCompatActivity  {
         contraseña = findViewById(R.id.contraseña);
 
 
+//TODO recoger la empresa y setear el logo en el login
     }
 
     /**
-     * TODO COTEJAR LOS DATOS INTRODUCIDOS CON LA BASE DE DATOS (USUARIO Y CONTRASEÑA)
+     * COTEJAR LOS DATOS INTRODUCIDOS CON LA BASE DE DATOS (USUARIO Y CONTRASEÑA)
      * @return
      */
     public void entrar(View view) {
 
         String nombre = usuario.getText().toString();
         String cont = contraseña.getText().toString();
-        Empleado u = database.empleados.getEmpleadoUsuarioClave(nombre,cont);
+        Empleado u = DB.empleados.getEmpleadoUsuarioClave(nombre,cont);
 
         if(u==null){
 
@@ -44,7 +45,7 @@ public class LoginActivity extends AppCompatActivity  {
 
             limpiarText(usuario,contraseña);
 
-            incorrecto.setText("Usuario y/o contraseña incorrectos, \n Contacte con el administrador");
+            incorrecto.setText(R.string.error_login);
 
         }
         //TODO SALTAR AL MENU DE TRABAJADOR O GESTOR
@@ -53,7 +54,7 @@ public class LoginActivity extends AppCompatActivity  {
            /*
             Intent intent = new Intent(this,MenuEmpleado.class);
              intent.putExtra("ID_EMPLEADO",u.getId_empleado());
-            intent.putExtra("ROL_EMPLEADO",u.getRol());
+            intent.putExtra("EMPLEADO",u);
              */
 
 
@@ -62,7 +63,7 @@ public class LoginActivity extends AppCompatActivity  {
            /*
             Intent intent = new Intent(this,MenuGestor.class);
              intent.putExtra("ID_EMPLEADO",u.getId_empleado());
-            intent.putExtra("ROL_EMPLEADO",u.getRol());
+            intent.putExtra("EMPLEADO",u);
              */
 
         }

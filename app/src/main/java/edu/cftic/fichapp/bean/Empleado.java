@@ -1,6 +1,8 @@
 package edu.cftic.fichapp.bean;
 
-public class Empleado {
+import java.io.Serializable;
+
+public class Empleado implements Serializable {//TODO Hacer parcelable
     private int id_empleado;
     private String nombre;
     private String usuario;
