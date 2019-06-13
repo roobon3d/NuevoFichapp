@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             Preferencias.setPrimeraVez(this, false);
         } else //no es la primera, vemos ayuda
             {
-            checkBox = null;//TODO sustituir xfindViewById(R.id.) de Gabriela
+            checkBox = findViewById(R.id.no_mostrar);
             if (Preferencias.isCheck(this, checkBox)) {
                 lanzarActividad(AyudaActivity.class);
             } else { //ayuda desactivada

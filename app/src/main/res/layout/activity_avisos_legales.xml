@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".acitividades.AvisosLegalesActivity">
+    <LinearLayout
+        android:id="@+id/lbl_textoslegales"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/titulo_legal"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="Avisos Legales"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-</android.support.constraint.ConstraintLayout>
+<WebView
+    android:id="@+id/webView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+</WebView>
+   <Button
+       android:id="@+id/boton_aceptar"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="He leído y Acepto las condiciones"
+       android:layout_gravity="center"
+       android:alpha="0.6"
+       android:onClick="mostrarAyuda"
+       android:background="@drawable/boton_selector"
+       />
+
+        <ImageView
+            android:id="@+id/imagen_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>
