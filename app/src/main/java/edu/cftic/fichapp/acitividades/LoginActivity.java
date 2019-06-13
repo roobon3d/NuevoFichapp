@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.aeat.valida.Validador;
+
 import edu.cftic.fichapp.R;
 import edu.cftic.fichapp.bean.Empleado;
 import edu.cftic.fichapp.persistencia.DB;
@@ -38,7 +40,8 @@ public class LoginActivity extends AppCompatActivity  {
         String nombre = usuario.getText().toString();
         String cont = contraseña.getText().toString();
         Empleado u = DB.empleados.getEmpleadoUsuarioClave(nombre,cont);
-
+        //Valida
+        //Validador validador
         if(u==null){
 
             TextView incorrecto = findViewById(R.id.incorrecto);
