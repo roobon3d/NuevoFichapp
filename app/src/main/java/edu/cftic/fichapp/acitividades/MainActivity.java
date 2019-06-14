@@ -9,7 +9,6 @@ import edu.cftic.fichapp.R;
 import edu.cftic.fichapp.bean.Empleado;
 import edu.cftic.fichapp.bean.Empresa;
 import edu.cftic.fichapp.persistencia.DB;
-import edu.cftic.fichapp.util.Constantes;
 import edu.cftic.fichapp.util.Preferencias;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private void lanzarActividad(Class actividad_destino) {
         Intent i = new Intent(this, actividad_destino);
         startActivity(i);
+        finish();
     }
 
 
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (Preferencias.primeraVez(this)) {
+        if (Preferencias.terminosAceptados(this)) {
             lanzarActividad(AvisosLegalesActivity.class);
 
         } else //no es la primera, vemos ayuda

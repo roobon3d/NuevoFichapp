@@ -11,11 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".acitividades.RegistroEmpresaActivity"></activity>
+        <activity android:name=".acitividades.LoginActivity"></activity>
         <activity android:name=".acitividades.RegistroEmpleadoActivity" />
         <activity android:name=".acitividades.MenuEmpleadoActivity" />
         <activity android:name=".acitividades.MenuGestorActivity" />
-        <activity android:name=".acitividades.AyudaActivity" />
-        <activity android:name=".acitividades.AvisosLegalesActivity" />
+        <activity android:name=".acitividades.AyudaActivity"
+            android:label="Ayuda"/>
+        <activity android:name=".acitividades.AvisosLegalesActivity"
+            android:label="Aviso Legal" />
         <activity android:name=".acitividades.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

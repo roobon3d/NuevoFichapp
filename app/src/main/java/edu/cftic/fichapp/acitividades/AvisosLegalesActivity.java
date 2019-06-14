@@ -27,44 +27,24 @@ public class AvisosLegalesActivity extends AppCompatActivity {
         new DialogoSimple().show(getSupportFragmentManager(), "DialogoSimple");
 
 
-
         //Cargar el fichero HTML en un web view
 
         WebView wv = (WebView) findViewById(R.id.webView1);
 
         wv.loadUrl("file:///android_asset/aviso_legal.html");
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home: //hago un case por si en un futuro agrego mas opciones
-                Log.i("ActionBar", "Atrás!");
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
-    public void esconderToolbar(View view) {
 
-        if(estado_barra ) {
-            getSupportActionBar().hide();
-        }else {
-            getSupportActionBar().show();
-        }
-        estado_barra = !estado_barra;
-    }
 
     public void mostrarAyuda(View view) {
 
         Intent intent_ayuda = new Intent (this,AyudaActivity.class);
         Preferencias.setPrimeraVez(this, false);
         startActivity(intent_ayuda);
+        finish();
 
 
     }

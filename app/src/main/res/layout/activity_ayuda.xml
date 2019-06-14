@@ -30,7 +30,15 @@
         android:layout_height="wrap_content">
 
     </WebView>
-    
+
+    <Button
+        android:id="@+id/button"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ACEPTAR"
+        android:onClick="aceptarAyuda"/>
+
     <CheckBox
         android:id="@+id/no_mostrar"
         android:layout_width="match_parent"

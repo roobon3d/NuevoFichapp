@@ -8,19 +8,19 @@ import android.widget.CheckBox;
 public class Preferencias {
 
     public static final String MODO_OSCURO = "modo_oscuro";
-    public static final String PRIMERA_VEZ = "primera_vez";
+    public static final String TERMINOS_ACEPTADOS = "terminos_aceptados";
     //TODO GESTIONAR ENVIO AUTOMÁTICO
     //TODO GESTIONAR PERIODICIDAD DEL ENVÍO / GENERACIÓN DEL INFORME
 
     private static final String NOMBRE_FICHERO = "fichero_prefs";
 
-    public static boolean primeraVez (Context context)
+    public static boolean terminosAceptados(Context context)
     {
         boolean b = false;
         SharedPreferences fichero = null;
 
         fichero = context.getSharedPreferences(NOMBRE_FICHERO, Context.MODE_PRIVATE);
-        b = fichero.getBoolean(PRIMERA_VEZ, true);
+        b = fichero.getBoolean(TERMINOS_ACEPTADOS, true);
 
         return b;
     }
@@ -32,7 +32,7 @@ public class Preferencias {
         fichero = context.getSharedPreferences(NOMBRE_FICHERO, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = fichero.edit();
 
-        editor.putBoolean(PRIMERA_VEZ,valor);
+        editor.putBoolean(TERMINOS_ACEPTADOS,valor);
 
     }
 
@@ -52,7 +52,8 @@ public class Preferencias {
         editor.putBoolean(x,true);
 
     }
-//ESTE ISCHECK SE REFIERE SOLO AL CHECKBOX DE LA AYUDA, SIGNIFICA QUE SI ES TRUE NO SE MUES
+
+    //ESTE ISCHECK SE REFIERE SOLO AL CHECKBOX DE LA AYUDA, SIGNIFICA QUE SI ES TRUE NO SE MUES
     public static boolean isCheck (Context context, CheckBox checkBox){
 
         boolean b = false;
