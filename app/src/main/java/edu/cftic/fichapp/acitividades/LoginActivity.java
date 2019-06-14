@@ -33,7 +33,8 @@ public class LoginActivity extends AppCompatActivity  {
 
 //TODO recoger la empresa y setear el logo en el login
         logo = findViewById(R.id.imagen_logo);
-        Empresa empresa = DB.empresas.ultimo();
+        Empresa empresa = null;
+        empresa = DB.empresas.ultimo();
         if (empresa != null){
             String rutalogo = empresa.getRutalogo();
             logo.setImageURI(Uri.parse(rutalogo));

@@ -3,6 +3,10 @@
     <string name="error_login">Usuario y/o contraseña incorrectos,  Contacte con el administrador</string>
 
     <string name="guardado" translatable="false">El fichaje ha quedado guardado</string>
+    <string name="accion_formativa">Esta aplicación ha sido desarrollada en el ámbito de una acción
+        formativa promovida por el Centro de Formación en Tecnologías de la Información
+        <a href="https://cftic.centrosdeformacion.empleo.madrid.org">CFTIC</a>.</string>
+    <string name="descripcion_logo_cas_training" translatable="false">Logo de Cas Training</string>
 
     <!--tipo de mensaje -->
     <string-array

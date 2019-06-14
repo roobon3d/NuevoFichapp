@@ -1,0 +1,175 @@
+[
+  {
+    "imagen": "gabriela",
+    "nombre": "Gabriela Huertas Naranjo",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/Gaby10"
+      }
+    ]
+  },
+  {
+    "imagen": null,
+    "nombre": "Fernando López Carballeda",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/flcarballeda"
+      },
+      {
+        "red": "email",
+        "enlace": "mailto:fernando@lopez.org"
+      }
+    ]
+  },
+  {
+    "imagen": "alicia",
+    "nombre": "Alicia Moreno OLiva",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/AliciaMorenoOLiva"
+      }
+
+    ]
+  },
+  {
+    "imagen": "quique",
+    "nombre": "Enrique Morán San Juan",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/kikemadrid"
+      },
+      {
+        "red": "linkedin",
+        "enlace": "https://www.linkedin.com/in/enrique-morán-san-juan-a7a94897/"
+      }
+
+
+    ]
+  },
+  {
+    "imagen": "nacho",
+    "nombre": "José Ignacio González Fernández",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/josegonfer77"
+      },
+      {
+        "red": "linkedin",
+        "enlace": "https://www.linkedin.com/in/josé-ignacio-gonzález-fernández-01aa4817a"
+      }
+    ]
+  },
+  {
+    "imagen": "juanmiguel",
+    "nombre": "Juan Miguel Lozano Iniesta",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/deliamber"
+      }
+    ]
+  },
+  {
+    "imagen": "juanlum",
+    "nombre": "Juan Luis Muñoz Cobo",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/reejulu"
+      },
+      {
+        "red": "linkedin",
+        "enlace": "https://www.linkedin.com/in/juan-luis-muñoz-cobo-9b5a32138/"
+      }
+    ]
+  },
+  {
+    "imagen": "alfonso",
+    "nombre": "Alfonso J. González Delgado",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/alfonso8969"
+      },
+      {
+        "red": "linkedin",
+        "enlace": "https://www.linkedin.com/in/alfonsoj-gonzalez"
+      }
+    ]
+  },
+  {
+    "imagen": "ruben",
+    "nombre": "Rubén Fernández Rivas",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/roobon3d"
+      },
+      {
+        "red": "linkedin",
+        "enlace": "https://es.linkedin.com/in/ruben-fernandez-rivas-230333133"
+      }
+    ]
+  },
+  {
+    "imagen": "sergio",
+    "nombre": "Sergio de la Torre",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/Sergio589"
+      }
+    ]
+  },
+  {
+    "imagen": "alejandro",
+    "nombre": "Alejandro Montoro",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/alexomonty"
+      },
+      {
+        "red": "linkedin",
+        "enlace": "https://www.linkedin.com/in/alejandro-montoro-4584a1187/"
+      }
+    ]
+  },
+  {
+    "imagen": "juanlup",
+    "nombre": "Juan Luis Perea López",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/JuanLPerea"
+      },
+      {
+        "red": "linkedin",
+        "enlace": "https://www.linkedin.com/in/juan-luis-perea-lópez-3482b2113/"
+      }
+    ]
+  },
+  {
+    "imagen": "marisa",
+    "nombre": "Marisa Sánchez López",
+    "social":[
+      {
+        "red": "github",
+        "enlace": "https://github.com/marisasonseca"
+      },
+      {
+        "red": "linkedin",
+        "enlace": "http://www.linkedin.com/in/maria-luisa-sánchez-lópez-8425a1188"
+      }
+    ]
+  },
+  {
+    "imagen": null,
+    "nombre": "Carlos A"
+  }
+]
