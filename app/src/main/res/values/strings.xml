@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">FichApp</string>
     <string name="error_login">Usuario y/o contraseña incorrectos,  Contacte con el administrador</string>
+
+    <string name="guardado" translatable="false">El fichaje ha quedado guardado</string>
+
+    <!--tipo de mensaje -->
+    <string-array
+        name="mensajes_array">
+        <item>(Opcional) Observaciones</item>
+        <item>Comida</item>
+        <item>Descanso</item>
+        <item>Salida Cliente</item>
+        <item>Médico</item>
+        <item>Retraso Transporte</item>
+        <item>Otros</item>
+
+    </string-array>
+
 </resources>
