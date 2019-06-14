@@ -52,7 +52,7 @@ public class Preferencias {
         editor.putBoolean(x,true);
 
     }
-
+//ESTE ISCHECK SE REFIERE SOLO AL CHECKBOX DE LA AYUDA, SIGNIFICA QUE SI ES TRUE NO SE MUES
     public static boolean isCheck (Context context, CheckBox checkBox){
 
         boolean b = false;

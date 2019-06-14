@@ -7,8 +7,10 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.CheckBox;
 
 import edu.cftic.fichapp.R;
+import edu.cftic.fichapp.util.Preferencias;
 
 public class AyudaActivity extends AppCompatActivity {
     private boolean estado_barra = false;
@@ -62,5 +64,9 @@ public class AyudaActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AvisosLegalesActivity.class);
         startActivity(intent);
 
+    }
+
+    public void check(View view) {
+        Preferencias.check(this, (CheckBox)findViewById(R.id.no_mostrar));
     }
 }

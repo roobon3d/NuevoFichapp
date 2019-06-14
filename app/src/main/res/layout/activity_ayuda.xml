@@ -40,7 +40,8 @@
         android:text="No volver a mostrar Ayuda"
         android:textSize="12sp"
         android:textStyle="bold"
-        android:layout_marginLeft="8dp"/>
+        android:layout_marginLeft="8dp"
+        android:onClick="check"/>
 
 
     <ImageView

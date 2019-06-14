@@ -51,11 +51,12 @@ public class MainActivity extends AppCompatActivity {
 
         if (Preferencias.primeraVez(this)) {
             lanzarActividad(AvisosLegalesActivity.class);
-            Preferencias.setPrimeraVez(this, false);
+
         } else //no es la primera, vemos ayuda
             {
-            checkBox = findViewById(R.id.no_mostrar);
-            if (Preferencias.isCheck(this, checkBox)) {
+                setContentView(R.layout.activity_ayuda);
+                checkBox = findViewById(R.id.no_mostrar);
+            if (!Preferencias.isCheck(this, checkBox)) {
                 lanzarActividad(AyudaActivity.class);
             } else { //ayuda desactivada
                  ;
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         Fichaje fe = new Fichaje(tr, de, hasta, "Mensaje");
         Log.i(Constantes.TAG_APP, "F: "+fe);
         boolean d = DB.fichar.nuevo(fe);
-        ArrayList<Fichaje> af = (ArrayList<Fichaje>) DB.fichar.getFicheje(tr.getId_empleado());
+        ArrayList<Fichaje> af = (ArrayList<Fichaje>) DB.fichar.getFichaje(tr.getId_empleado());
 
         for(Fichaje es : af){
             Log.i(Constantes.TAG_APP, "= "+es);
@@ -116,6 +117,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Fichaje ul = DB.fichar.getFichajeUltimo(tr.getId_empleado());
-        Log.i(Constantes.TAG_APP, ""+ul.toString());*/
+        Log.i(Constantes.TAG_APP, ""+ul.toString());
+
+        ArrayList<Fichaje> fee = (ArrayList<Fichaje>) DB.fichar.getFichaje(1, de, hasta);
+        for(Fichaje es : fee){
+            Log.i("APPK", "Fichaje :: "+es);
+        }
+
+
+
+        */
     }
 }

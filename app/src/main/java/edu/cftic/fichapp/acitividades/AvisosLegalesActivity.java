@@ -12,6 +12,7 @@ import android.webkit.WebView;
 import android.widget.Toast;
 
 import edu.cftic.fichapp.R;
+import edu.cftic.fichapp.util.Preferencias;
 
 public class AvisosLegalesActivity extends AppCompatActivity {
     private boolean estado_barra = false;
@@ -62,7 +63,9 @@ public class AvisosLegalesActivity extends AppCompatActivity {
     public void mostrarAyuda(View view) {
 
         Intent intent_ayuda = new Intent (this,AyudaActivity.class);
+        Preferencias.setPrimeraVez(this, false);
         startActivity(intent_ayuda);
+
 
     }
 
