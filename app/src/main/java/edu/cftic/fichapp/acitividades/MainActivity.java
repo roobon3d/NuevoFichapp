@@ -13,7 +13,6 @@ import edu.cftic.fichapp.util.Preferencias;
 
 public class MainActivity extends AppCompatActivity {
 
-    //TODO HACER LAS VISTAS DE LOS MENUS PARA IMPLEMENTAR CON LA DB
     private CheckBox checkBox;
 
     private Empleado hayGestor() {
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (Preferencias.terminosAceptados(this)) {
+        if (!Preferencias.terminosAceptados(this)) {
             lanzarActividad(AvisosLegalesActivity.class);
 
         } else //no es la primera, vemos ayuda
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             if (!Preferencias.isCheck(this, checkBox)) {
                 lanzarActividad(AyudaActivity.class);
             } else { //ayuda desactivada
-                 ;
+
                 if (null == hayGestor()) {
                     lanzarActividad(RegistroEmpleadoActivity.class);
                 } else { //hay gestor
