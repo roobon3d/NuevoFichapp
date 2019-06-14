@@ -90,6 +90,15 @@
             android:gravity="center"
             android:text=""/>
 
+
+        <TextView
+            android:id="@+id/creditos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Créditos"
+            android:onClick="creditos"/>
+
     </android.support.design.widget.TextInputLayout>
 
 </RelativeLayout>

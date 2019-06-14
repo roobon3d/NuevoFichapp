@@ -1,16 +1,19 @@
 package edu.cftic.fichapp.acitividades;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aeat.valida.Validador;
 
 import edu.cftic.fichapp.R;
 import edu.cftic.fichapp.bean.Empleado;
+import edu.cftic.fichapp.bean.Empresa;
 import edu.cftic.fichapp.persistencia.DB;
 import edu.cftic.fichapp.util.Constantes;
 
@@ -18,6 +21,7 @@ public class LoginActivity extends AppCompatActivity  {
 
     EditText usuario;
     EditText contraseña;
+    ImageView logo;
 
 
     @Override
@@ -27,8 +31,14 @@ public class LoginActivity extends AppCompatActivity  {
         usuario = findViewById(R.id.usuario);
         contraseña = findViewById(R.id.contraseña);
 
-
 //TODO recoger la empresa y setear el logo en el login
+        logo = findViewById(R.id.imagen_logo);
+        Empresa empresa = DB.empresas.ultimo();
+        if (empresa != null){
+            String rutalogo = empresa.getRutalogo();
+            logo.setImageURI(Uri.parse(rutalogo));
+        }
+
     }
 
     /**
@@ -88,5 +98,12 @@ public class LoginActivity extends AppCompatActivity  {
         }
     }
 
+    public void creditos(View view) {
+
+        Intent intent = new Intent(this, Creditos.class);
+        startActivity(intent);
+        finish();
+
+    }
 }
 

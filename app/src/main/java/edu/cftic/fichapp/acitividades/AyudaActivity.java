@@ -30,7 +30,6 @@ public class AyudaActivity extends AppCompatActivity {
     }
 
 
-
     public void check(View view) {
         Preferencias.check(this, (CheckBox)findViewById(R.id.no_mostrar));
     }

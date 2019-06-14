@@ -20,12 +20,12 @@ public class Preferencias {
         SharedPreferences fichero = null;
 
         fichero = context.getSharedPreferences(NOMBRE_FICHERO, Context.MODE_PRIVATE);
-        b = fichero.getBoolean(TERMINOS_ACEPTADOS, true);
+        b = fichero.getBoolean(TERMINOS_ACEPTADOS, false);
 
         return b;
     }
 
-    public static void setPrimeraVez (Context context, boolean valor)
+    public static void setTerminos(Context context, boolean valor)
     {
         SharedPreferences fichero = null;
 
@@ -33,6 +33,7 @@ public class Preferencias {
         SharedPreferences.Editor editor = fichero.edit();
 
         editor.putBoolean(TERMINOS_ACEPTADOS,valor);
+        editor.commit();
 
     }
 
@@ -50,6 +51,8 @@ public class Preferencias {
         String x = String.valueOf(checkBox.getId());
 
         editor.putBoolean(x,true);
+        editor.commit();
+
 
     }
 
@@ -76,6 +79,8 @@ public class Preferencias {
         SharedPreferences.Editor editor = fichero.edit();
 
         editor.putBoolean("booleano",b);
+        editor.commit();
+
 
     }
 
@@ -98,6 +103,8 @@ public class Preferencias {
         SharedPreferences.Editor editor = fichero.edit();
 
         editor.putString("texto",t);
+        editor.commit();
+
 
     }
 
@@ -111,7 +118,6 @@ public class Preferencias {
         return fichero.getString("texto",null);
 
     }
-
 
 
 }
