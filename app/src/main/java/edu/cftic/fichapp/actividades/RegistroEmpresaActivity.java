@@ -1,15 +1,15 @@
-package edu.cftic.fichapp.acitividades;
+package edu.cftic.fichapp.actividades;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import edu.cftic.fichapp.R;
 
-public class MenuGestorActivity extends AppCompatActivity {
+public class RegistroEmpresaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_gestor);
+        setContentView(R.layout.activity_registro_empresa);
     }
 }

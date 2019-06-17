@@ -9,8 +9,7 @@
     <string name="descripcion_logo_cas_training" translatable="false">Logo de Cas Training</string>
 
     <!--tipo de mensaje -->
-    <string-array
-        name="mensajes_array">
+    <string-array name="mensajes_array">
         <item>(Opcional) Observaciones</item>
         <item>Comida</item>
         <item>Descanso</item>

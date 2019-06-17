@@ -1,4 +1,4 @@
-package edu.cftic.fichapp.acitividades;
+package edu.cftic.fichapp.actividades;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -59,13 +59,14 @@ public class MainActivity extends AppCompatActivity {
                 lanzarActividad(AyudaActivity.class);
             } else { //ayuda desactivada
 
-                if (null == hayGestor()) {
-                    lanzarActividad(RegistroEmpleadoActivity.class);
-                } else { //hay gestor
-                    if (!hayEmpresa())
-                    {//no hay empresa
-                        lanzarActividad(RegistroEmpresaActivity.class);
-                    } else //hay gestor y empresa
+                if (!hayEmpresa()) {
+
+                    lanzarActividad(RegistroEmpresaActivity.class);
+                } else { //hay empresa
+                    if (null == hayGestor())
+                    {//no hay gestor
+                        lanzarActividad(RegistroEmpleadoActivity.class);
+                    } else //hay empresa y gestor
                         {
                             lanzarActividad(LoginActivity.class);
                         }

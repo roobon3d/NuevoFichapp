@@ -1,10 +1,9 @@
-package edu.cftic.fichapp.acitividades;
+package edu.cftic.fichapp.actividades;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.CheckBox;

@@ -5,16 +5,20 @@
     android:id="@+id/linearBase"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
     android:layout_marginTop="20dp"
-    android:layout_marginRight="16dp"
+    android:backgroundTint="@color/blanco"
+    android:background="@drawable/fonfologininferior"
     android:orientation="vertical"
-    tools:context=".acitividades.RegistroEntradaSalida">
+    tools:context=".actividades.RegistroEntradaSalida">
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:orientation="vertical">
 
         <TextView
@@ -24,6 +28,7 @@
             android:layout_weight=".5"
             android:gravity="center"
             android:text="Hora de Entrada"
+            android:textStyle="bold"
             android:textSize="24sp" />
 
         <Button
@@ -31,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:background="@drawable/fondogradiente"
             android:onClick="ficharEntrada"
             android:text="FICHAR ENTRADA" />
 
@@ -47,7 +53,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".3"
+        android:layout_weight=".1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:background="@android:color/darker_gray"
         android:gravity="center"
         android:orientation="horizontal">
@@ -60,6 +68,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:orientation="vertical">
 
         <TextView
@@ -69,6 +79,7 @@
             android:layout_weight=".5"
             android:gravity="center"
             android:text="Hora de Salida"
+            android:textStyle="bold"
             android:textSize="24sp" />
 
         <Button
@@ -76,6 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:background="@drawable/fondogradiente"
             android:enabled="false"
             android:onClick="ficharSalida"
             android:text="FICHAR SALIDA"
@@ -93,11 +105,16 @@
 
     </LinearLayout>
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:background="@android:color/darker_gray"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
+        android:background="@color/blanco"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -120,6 +137,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="5"
                 android:background="?attr/colorButtonNormal"
+                android:paddingLeft="5dp"
+                android:textStyle="italic"
                 android:hint="Introduce comentarios o incidencias" />
 
             <CheckBox
@@ -137,7 +156,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:gravity="center">
+            android:gravity="center"
+            >
 
             <TextView
                 android:id="@+id/cronoFichaje"
@@ -153,6 +173,11 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
+                android:background="@drawable/fondogradiente"
                 android:onClick="salir"
                 android:text="GUARDAR FICHAJE Y SALIR" />
         </LinearLayout>

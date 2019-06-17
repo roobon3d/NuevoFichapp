@@ -10,24 +10,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".acitividades.Creditos"
-            android:label="Créditos"></activity>
-        <activity android:name=".acitividades.RegistroEmpresaActivity"
-            android:label="Registro Empresa"></activity>
-        <activity android:name=".acitividades.LoginActivity"
-            android:label="Login"/>
-        <activity android:name=".acitividades.RegistroEmpleadoActivity"
-            android:label="Registro Empleado"/>
-        <activity android:name=".acitividades.MenuEmpleadoActivity"
-            android:label="Menú Gestor"/>
-        <activity android:name=".acitividades.MenuGestorActivity"
-            android:label="Menú Gestor"/>
-        <activity android:name=".acitividades.AyudaActivity"
-            android:label="Ayuda"/>
-        <activity android:name=".acitividades.AvisosLegalesActivity"
+        <activity android:name=".actividades.ConsultaFichajeActivity"></activity>
+        <activity
+            android:name=".actividades.Creditos"
+            android:label="Créditos" />
+        <activity
+            android:name=".actividades.RegistroEmpresaActivity"
+            android:label="Registro Empresa" />
+        <activity
+            android:name=".actividades.LoginActivity"
+            android:label="Login" />
+        <activity
+            android:name=".actividades.RegistroEmpleadoActivity"
+            android:label="Registro Empleado" />
+        <activity
+            android:name=".actividades.MenuEmpleadoActivity"
+            android:label="Menú Gestor" />
+        <activity
+            android:name=".actividades.MenuGestorActivity"
+            android:label="Menú Gestor" />
+        <activity
+            android:name=".actividades.AyudaActivity"
+            android:label="Ayuda" />
+        <activity
+            android:name=".actividades.AvisosLegalesActivity"
             android:label="Aviso Legal" />
-
-        <activity android:name=".acitividades.MainActivity">
+        <activity android:name=".actividades.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

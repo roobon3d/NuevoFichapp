@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".acitividades.AvisosLegalesActivity">
+    tools:context=".actividades.AvisosLegalesActivity">
     <LinearLayout
         android:id="@+id/lbl_textoslegales"
         android:layout_width="match_parent"

@@ -8,7 +8,7 @@
     android:padding="10dp"
     android:id="@+id/empleado_root"
     android:orientation="vertical"
-    tools:context=".acitividades.RegistroEmpleadoActivity">
+    tools:context=".actividades.RegistroEmpleadoActivity">
 
 
     <android.support.design.widget.TextInputLayout

@@ -1,15 +1,16 @@
-package edu.cftic.fichapp.acitividades;
+package edu.cftic.fichapp.actividades;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import edu.cftic.fichapp.R;
 
-public class RegistroEmpresaActivity extends AppCompatActivity {
+public class RegistroEmpleadoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro_empresa);
+        setContentView(R.layout.activity_registro_empleado);
     }
 }

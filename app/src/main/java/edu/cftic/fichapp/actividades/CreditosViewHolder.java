@@ -1,4 +1,4 @@
-package edu.cftic.fichapp.acitividades;
+package edu.cftic.fichapp.actividades;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
