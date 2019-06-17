@@ -26,7 +26,7 @@ public class MenuGestorActivity extends AppCompatActivity {
 
     public void editarEmpleadoPulsado(View view) {
 
-
+//salto a la actividad de juanlu de selcionar empleado
 
        Intent intent = new Intent(this,RegistroEmpleadoActivity.class);
         intent.putExtra("ID_EMPLEADO",u.getId_empleado());

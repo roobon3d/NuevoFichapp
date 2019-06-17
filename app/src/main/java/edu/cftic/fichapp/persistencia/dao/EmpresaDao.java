@@ -61,7 +61,7 @@ public class EmpresaDao extends CRUD implements IEmpresaEsquema, IEmpresaDao {
         Empresa e = null;
         String LIMITE = "1";
         cursor = super.query(C_TABLA, C_COLUMNAS, null, null, C_COL_ID_EMPRESA, LIMITE);
-        if(cursor != null){
+        if(cursor != null && cursor.getCount()>0){
             cursor.moveToFirst();
             e = cursorATabla(cursor);
         }
