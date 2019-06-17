@@ -34,14 +34,14 @@ public class DialogoSimple extends DialogFragment {
                                 public void onClick(DialogInterface dialog, int which) {
                                     // Acciones
                                 }
-                            })
-                    .setNegativeButton("CANCELAR",
+                            });
+                    /*.setNegativeButton("CANCELAR",
                             new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
 
                                 }
-                            });
+                            });*/
 
             return builder.create();
         }

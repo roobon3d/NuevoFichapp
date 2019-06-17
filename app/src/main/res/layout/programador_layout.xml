@@ -8,7 +8,7 @@
 
     >
 
-    <ImageView
+    <edu.cftic.fichapp.util.RoundedImageView
         android:id="@+id/imagen"
         android:layout_width="80dp"
         android:layout_height="80dp"

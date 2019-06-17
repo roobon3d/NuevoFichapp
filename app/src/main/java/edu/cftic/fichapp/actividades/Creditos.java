@@ -9,6 +9,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -38,9 +39,7 @@ public class Creditos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creeditos);
-
-        ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        //creamos la variable de Uri en la que va a contener "android.resource://" + el nombre del paquete + / + lo que contiene programadores
         Uri uri = Uri.parse(
                 "android.resource://"
                         + getPackageName()
@@ -51,11 +50,13 @@ public class Creditos extends AppCompatActivity {
         // Display the raw resource uri in text view
         Log.d("MIAPP", "URI of the image : \n" + uri.toString());
         try {
+
             InputStream ins = getResources().openRawResource(R.raw.programadores);
 
             InputStreamReader br = new InputStreamReader(ins, "UTF-8");
             Gson gson = new Gson();
 
+            //le metemos al json los datos del array
             final Type tipoEnvoltorioEmpleado = new TypeToken<ArrayList<Programador>>() {
             }.getType();
             datos = gson.fromJson(br, tipoEnvoltorioEmpleado);
@@ -65,6 +66,7 @@ public class Creditos extends AppCompatActivity {
 
             Collections.shuffle(datos); //hace que el orden en el que salen las filas sea aleatorio cada vez que carga la aplicacion
 
+            //hacemos la referencia a AdapterCreditos
             adaptador = new AdapterCreditos(datos, this);
 
             recView.setAdapter(adaptador);
@@ -75,14 +77,23 @@ public class Creditos extends AppCompatActivity {
         } catch (Exception e) {
             Log.e( this.getClass().getCanonicalName(), "Error al procesar los datos de los creditos.",e);
         }
+        //metemos la imagen de cftic
         ImageView cas= (ImageView) findViewById(R.id.imageViewLogoCas); //txt is object of TextView
         cas.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW);
-                browserIntent.setData(Uri.parse("https://www.cas-training.com/"));
+                browserIntent.setData(Uri.parse("https://www.cas-training.com/ "));
                 startActivity(browserIntent);
             }
         });
+        //metemos el huevo de pascua
+        cas.setOnLongClickListener (new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                return  true;
+            }
+        });
+        //metemos el texto con el enlace a la pagina cftic
         TextView txt= (TextView) findViewById(R.id.textViewAccionFormativa); //txt is object of TextView
         txt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -91,13 +102,26 @@ public class Creditos extends AppCompatActivity {
                 startActivity(browserIntent);
             }
         });
+        //ponemos la flecha para volver atras
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    //creamos este metodo para que el ActionBar(la flecha hacia atras) funcione bien
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home){
+            finish();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
+    //creamos el click del onClick del boton github
     public void clickGithub(View view) {
         Uri webpage = Uri.parse((String) view.getTag());
         OpenWebPage(webpage);
     }
-
+    //creamos el metodo para abrir el link del github, linkedin o email
     private void OpenWebPage(Uri webpage) {
         Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
         String pregunta = "Con que app quieres continuar";
@@ -107,6 +131,7 @@ public class Creditos extends AppCompatActivity {
         }
     }
 
+    //creamos el click del onClick del boton linkedin
     public void clickLinkedin (View view){
         if( view.getVisibility() == View.VISIBLE) {
             Uri webpage = Uri.parse((String) view.getTag());
