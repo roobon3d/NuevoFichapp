@@ -111,7 +111,6 @@ public class LoginActivity extends AppCompatActivity  {
             incorrecto.setText(R.string.error_login);
 
         }
-        //TODO SALTAR AL MENU DE TRABAJADOR O GESTOR
 
         Intent intent = null;
 

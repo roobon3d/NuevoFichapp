@@ -1,8 +1,10 @@
 package edu.cftic.fichapp.actividades;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import edu.cftic.fichapp.R;
 import edu.cftic.fichapp.bean.Empleado;
@@ -29,5 +31,19 @@ public class MenuEmpleadoActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void fichar(View view) {
+
+        Intent intent = new Intent(this,RegistroEntradaSalida.class);
+        intent.putExtra("EMPLEADO",u);
+        startActivity(intent);
+
+    }
+
+    public void consulta(View view) {
+        Intent intent = new Intent(this,ConsultaFichajeActivity.class);
+        intent.putExtra("EMPLEADO",u);
+        startActivity(intent);
     }
 }

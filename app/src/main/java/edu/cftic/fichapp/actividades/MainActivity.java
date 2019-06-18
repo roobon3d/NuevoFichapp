@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(R.layout.activity_ayuda);
                 checkBox = findViewById(R.id.no_mostrar);
             if (!Preferencias.isCheck(this, checkBox)) {
-                lanzarActividad(AyudaActivity.class);
+                lanzarActividad(MenuGestorActivity.class);
+                //lanzarActividad(AyudaActivity.class);
             } else { //ayuda desactivada
 
                 if (!hayEmpresa()) {

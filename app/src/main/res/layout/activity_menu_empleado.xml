@@ -10,7 +10,7 @@ android:background="@drawable/fonfologininferior"
 android:gravity="center"
 android:orientation="vertical"
 android:padding="16dp"
-tools:context=".MenuEmpleadoActivity">
+tools:context=".actividades.MenuEmpleadoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,7 +46,8 @@ tools:context=".MenuEmpleadoActivity">
             app:cardElevation="8dp"
             app:cardCornerRadius="16dp"
             android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="fichar">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -101,6 +102,7 @@ tools:context=".MenuEmpleadoActivity">
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical"
+                android:onClick="consulta"
               >
 
                 <ImageView

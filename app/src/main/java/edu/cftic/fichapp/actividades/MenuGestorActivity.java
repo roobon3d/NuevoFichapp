@@ -20,7 +20,7 @@ public class MenuGestorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_gestor);
-        u = (Empleado) getIntent().getExtras().get(Constantes.EMPLEADO);
+        //u = (Empleado) getIntent().getExtras().get(Constantes.EMPLEADO);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -42,12 +42,27 @@ public class MenuGestorActivity extends AppCompatActivity {
 
 //salto a la actividad de juanlu de selcionar empleado
 
-       Intent intent = new Intent(this,RegistroEmpleadoActivity.class);
-        intent.putExtra("ID_EMPLEADO",u.getId_empleado());
+        Intent intent = new Intent(this,ModificarCrearBorrarActivity.class);
         intent.putExtra("EMPLEADO",u);
+        startActivity(intent);
 
     }
 
     public void editarEmpresaPulsado(View view) {
+
+        Intent intent = new Intent(this,RegistroEmpresaActivity.class);
+        intent.putExtra("EMPLEADO",u);
+        startActivity(intent);
+    }
+
+    public void consulta(View view) {
+
+        Intent intent = new Intent(this,ConsultaFichajeActivity.class);
+        intent.putExtra("EMPLEADO",u);
+        startActivity(intent);
+    }
+
+    public void plantilla(View view) {
+
     }
 }

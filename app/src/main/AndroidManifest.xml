@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".actividades.ConsultaFichajeActivity"></activity>
+        <activity android:name=".actividades.ModificarCrearBorrarActivity"></activity>
+        <activity android:name=".actividades.ConsultaFichajeActivity" />
         <activity
             android:name=".actividades.Creditos"
             android:label="Créditos" />

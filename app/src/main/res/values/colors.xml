@@ -13,6 +13,9 @@
     <color name="pink">#fe104d</color>
     <color name="fondologo">#e9dd2d</color>
     <color name="blanco">#ffffff</color>
+    <color name="colorAccent1">#D81B60</color>
+    <color name="colorAmarillo">#FFC107</color>
+    <color name="colorVerde">#40B821</color>
 
     <color name="black_overlay">#66000000</color>
 
