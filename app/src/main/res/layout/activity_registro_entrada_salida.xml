@@ -38,7 +38,8 @@
             android:layout_weight="1"
             android:background="@drawable/fondogradiente"
             android:onClick="ficharEntrada"
-            android:text="FICHAR ENTRADA" />
+            android:text="FICHAR ENTRADA"
+            android:textSize="32sp"/>
 
         <TextView
             android:id="@+id/horaEntrada"
@@ -91,6 +92,7 @@
             android:enabled="false"
             android:onClick="ficharSalida"
             android:text="FICHAR SALIDA"
+            android:textSize="32sp"
             android:visibility="visible" />
 
         <TextView

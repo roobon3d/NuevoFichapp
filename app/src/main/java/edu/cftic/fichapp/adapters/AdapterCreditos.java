@@ -1,4 +1,4 @@
-package edu.cftic.fichapp.actividades;
+package edu.cftic.fichapp.adapters;
 
 
 import android.content.Context;
@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import edu.cftic.fichapp.R;
+import edu.cftic.fichapp.actividades.CreditosViewHolder;
 import edu.cftic.fichapp.bean.Programador;
 
 public class AdapterCreditos extends RecyclerView.Adapter<CreditosViewHolder> {

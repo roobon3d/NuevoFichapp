@@ -1,6 +1,5 @@
 package edu.cftic.fichapp.actividades;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import edu.cftic.fichapp.R;
+import edu.cftic.fichapp.adapters.AdapterCreditos;
 import edu.cftic.fichapp.bean.Programador;
 
 public class Creditos extends AppCompatActivity {

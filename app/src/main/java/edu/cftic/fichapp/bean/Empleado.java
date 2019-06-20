@@ -1,6 +1,7 @@
 package edu.cftic.fichapp.bean;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Empleado implements Serializable {//TODO Hacer parcelable
     private int id_empleado;
@@ -101,4 +102,13 @@ public class Empleado implements Serializable {//TODO Hacer parcelable
                 ", empresa=" + empresa.getId_empresa() +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Empleado empleado = (Empleado) o;
+        return usuario.equals(empleado.usuario);
+    }
+
 }

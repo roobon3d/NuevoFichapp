@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".actividades.ModificarCrearBorrarActivity"></activity>
-        <activity android:name=".actividades.ConsultaFichajeActivity" />
+
         <activity
             android:name=".actividades.Creditos"
             android:label="Créditos" />
@@ -29,7 +29,24 @@
             android:label="Menú Gestor" />
         <activity
             android:name=".actividades.MenuGestorActivity"
-            android:label="Menú Gestor" />
+            android:label="Menú Gestor" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
+        <activity
+            android:name=".actividades.ConsultaFichajeActivity"
+            android:label="Consulta Fichaje">
+
+
+
+        </activity>
+
+
         <activity
             android:name=".actividades.AyudaActivity"
             android:label="Ayuda" />
@@ -37,11 +54,7 @@
             android:name=".actividades.AvisosLegalesActivity"
             android:label="Aviso Legal" />
         <activity android:name=".actividades.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

@@ -1,13 +1,14 @@
+
 package edu.cftic.fichapp.actividades;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,8 +24,8 @@ import android.widget.TextView;
 
 import java.sql.Timestamp;
 import java.util.Date;
-import edu.cftic.fichapp.R;
 
+import edu.cftic.fichapp.R;
 import edu.cftic.fichapp.bean.Empleado;
 import edu.cftic.fichapp.bean.Fichaje;
 import edu.cftic.fichapp.persistencia.DB;
@@ -226,10 +227,10 @@ public class RegistroEntradaSalida extends AppCompatActivity implements AdapterV
                 // Actualizamos el nuevo fichaje y lo guardamos en la BB.DD
                 Empleado empleado_ultimo = ultimoFichaje.getEmpleado();
                 nuevoFichaje = new Fichaje(empleado_ultimo, fichajeTimestamp, new Timestamp(0), "");
-                if (mensajeCheck.isChecked()) {
+                //if (mensajeCheck.isChecked()) {
                     // Guardar mensaje
                     nuevoFichaje.setMensaje(mensajeET.getText().toString());
-                }
+                //}
 
                 DB.fichar.nuevo(nuevoFichaje);
                 break;
@@ -238,12 +239,12 @@ public class RegistroEntradaSalida extends AppCompatActivity implements AdapterV
                 ultimoFichaje.setFechafin(fichajeTimestamp);
                 // Si hemos incluido mensaje, ponerlo
                 // Guardar en Base de Datos
-                if (mensajeCheck.isChecked()) {
+               // if (mensajeCheck.isChecked()) {
                     // Guardar mensaje
-                    ultimoFichaje.setMensaje(mensajeET.getText().toString());
-                }
+                    ultimoFichaje.setMensaje( ultimoFichaje.getMensaje() + " / " + mensajeET.getText().toString());
+                //}
 
-                DB.fichar.actualizar(ultimoFichaje);
+                DB.fichar.nuevo(ultimoFichaje);
                 break;
 
         }
@@ -297,10 +298,10 @@ public class RegistroEntradaSalida extends AppCompatActivity implements AdapterV
         }
 
         // Volvemos a la actividad de login
-        Intent intent0 = new Intent(this, MainActivity.class);// vamos a menu y pasamos el empleado
+       // Intent intent0 = new Intent(this, ConsultaFichajeActivity.class);// vamos a menu y pasamos el empleado
         //intent0.putExtra(Constantes.EMPLEADO, empleado);
-        startActivity(intent0);
-
+        //startActivity(intent0);
+        this.finish();
     }
 
     @Override
@@ -364,4 +365,3 @@ public class RegistroEntradaSalida extends AppCompatActivity implements AdapterV
 
     }
 }
-
